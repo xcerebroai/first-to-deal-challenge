@@ -11,18 +11,13 @@ import { DAYS } from './config'
 const ROADMAP = [
   {
     ...DAYS[0],
-    title: 'Plug In & Find the Deal',
-    body: 'Set up DealMachine, point the AI at your market, and pull your first list of motivated, off-market sellers the same day.',
+    title: 'Find & Respond',
+    body: 'Turn on the new AI, point it at your market, and watch it surface better opportunities, skip-trace owners, and help you respond to leads faster than ever.',
   },
   {
     ...DAYS[1],
-    title: 'Talk to Sellers & Underwrite',
-    body: 'Use the AI dialer, scripts, and instant comps to reach owners, handle objections, and know your numbers before you offer.',
-  },
-  {
-    ...DAYS[2],
-    title: 'Lock In the Contract',
-    body: 'Make the offer, structure the deal, and line up your exit — wholesale, assign, or hold. First to close wins the prize.',
+    title: 'Automate & Close',
+    body: 'Automate your follow-up, organize your whole pipeline, and let AI tell you exactly what to say — moving your first deal toward the closing table.',
   },
 ]
 
@@ -30,17 +25,17 @@ const PILLARS = [
   {
     icon: VideoIcon,
     title: 'Live Coaching',
-    body: 'Learn directly from me in 3 power-packed live sessions. Cameras on, questions answered, no fluff.',
+    body: 'Learn directly from me in 2 power-packed live sessions. Cameras on, questions answered, no fluff.',
   },
   {
     icon: CpuIcon,
-    title: 'AI Software Training',
-    body: "Master DealMachine's newest AI systems to find, score, and manage off-market leads faster than any list you could buy.",
+    title: 'The New AI Features',
+    body: "See DealMachine's brand-new AI features first-hand — how the system works and how to put it to work inside your real estate business.",
   },
   {
     icon: TerminalIcon,
     title: 'Scripts & Systems',
-    body: 'Copy-paste the exact scripts, offers, and follow-up sequences I use to talk to sellers and get deals signed.',
+    body: 'Copy-paste the exact scripts, offers, and AI-driven follow-up sequences that talk to sellers and get deals signed.',
   },
 ]
 
@@ -50,13 +45,13 @@ export default function Challenge() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-matrix/30 to-transparent" />
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <MatrixHeading
-          eyebrow="Stay Plugged In For 3 Days"
+          eyebrow="2 Days Live · Aug 5–6"
           title={<>Follow the exact steps to your <span className="text-matrix text-glow-green">first deal</span></>}
-          intro="Join me live each day. Every session builds on the last — by Day 3 you're not taking notes, you're closing."
+          intro="Join me live both days. Every session builds on the last — by Day 2 you're not taking notes, you're executing."
         />
 
         {/* Day-by-day roadmap */}
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-5 md:grid-cols-2">
           {ROADMAP.map((d, i) => (
             <Reveal key={d.n} delay={i * 0.08}>
               <div className="matrix-card h-full rounded-lg p-6">

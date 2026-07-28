@@ -11,10 +11,10 @@ import { ArrowRightIcon, CalendarIcon } from './icons'
 import { DAYS } from './config'
 
 const MANIFESTO = [
-  'YOU ARE THE CODE.',
-  'YOU ARE THE DEALMAKER.',
-  'UNLOCK HIDDEN LISTS. AI CLOSERS. TITLE HACKS.',
-  'FIRST TO CLOSE WINS.',
+  'REAL ESTATE HAS CHANGED.',
+  'MARKETING HAS CHANGED.',
+  'AI CHANGED HOW FAST YOU FIND, FOLLOW UP, AND CLOSE.',
+  'THIS IS NOT THE SAME CHALLENGE.',
 ]
 
 const fadeUp = {
@@ -55,7 +55,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-matrix/40 bg-matrix/10 px-4 py-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-[0.18em] text-matrix-bright backdrop-blur-sm"
         >
           <CalendarIcon className="h-4 w-4" />
-          3-Day Live Challenge · DealMachine AI Edition
+          2-Day Live Challenge · New DealMachine AI Features
         </motion.span>
 
         <motion.p
@@ -65,7 +65,7 @@ export default function Hero() {
           animate="show"
           className="matrix-caret mt-8 font-mono text-sm uppercase tracking-[0.16em] text-matrix/80"
         >
-          {'> '}welcome to the first to deal challenge
+          {'> '}the first to deal challenge is back
         </motion.p>
 
         <motion.h1
@@ -75,9 +75,9 @@ export default function Hero() {
           animate="show"
           className="mt-5 font-heading text-[2.5rem] font-extrabold leading-[1.02] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl"
         >
-          BREAK THE CYCLE.
+          NEW AI FEATURES.
           <br />
-          <span className="text-matrix text-glow-green">CLOSE YOUR FIRST DEAL.</span>
+          <span className="text-matrix text-glow-green">MORE DEALS, CLOSED FASTER.</span>
         </motion.h1>
 
         <motion.div
@@ -101,8 +101,9 @@ export default function Hero() {
           animate="show"
           className="mx-auto mt-7 max-w-2xl font-body text-base leading-relaxed text-slate-300/90 sm:text-lg"
         >
-          Join me live for 3 days and follow the exact steps — powered by DealMachine's newest
-          AI systems — to lock in your first off-market real estate deal.
+          This time it's not another wholesaling blueprint. I'm unveiling the new AI-powered
+          system that finds opportunities, responds to leads, and moves your first deal toward
+          the closing table — live over 2 days.
         </motion.p>
 
         <motion.div
@@ -132,7 +133,7 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mx-auto mt-11 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3"
+          className="mx-auto mt-11 grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2"
         >
           {DAYS.map((d) => (
             <div

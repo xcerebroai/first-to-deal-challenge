@@ -46,15 +46,14 @@ export const BRAND = 'FIRST TO DEAL'
  */
 export const HERO_IMAGE = ''
 
-/** The three live days. Edit the labels freely — they're displayed verbatim. */
+/** The live days. Edit the labels freely — they're displayed verbatim. */
 export const DAYS = [
-  { n: 1, label: 'Day 1', when: 'Tuesday, Nov 11 · 12 PM CST' },
-  { n: 2, label: 'Day 2', when: 'Wednesday, Nov 12 · 12 PM CST' },
-  { n: 3, label: 'Day 3', when: 'Thursday, Nov 13 · 12 PM CST' },
+  { n: 1, label: 'Day 1', when: 'Wednesday, Aug 5 · 12 PM CST' },
+  { n: 2, label: 'Day 2', when: 'Thursday, Aug 6 · 12 PM CST' },
 ]
 
 /**
  * Countdown deadline ("REGISTRATION CLOSES IN"). Local time of the viewer.
  * Format: 'YYYY-MM-DDTHH:MM:SS'. Set this to just before your Day 1 start.
  */
-export const REGISTRATION_CLOSES = '2026-11-11T12:00:00'
+export const REGISTRATION_CLOSES = '2026-08-05T12:00:00'

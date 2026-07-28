@@ -11,33 +11,33 @@ import { TargetIcon, DatabaseIcon, CpuIcon, PhoneIcon, BoltIcon, TerminalIcon } 
 const SYSTEMS = [
   {
     icon: TargetIcon,
-    title: 'AI Deal Finder',
-    body: 'Point the AI at any market and it surfaces the most motivated, off-market sellers — no more guessing which list to pull.',
-  },
-  {
-    icon: DatabaseIcon,
-    title: 'AI Lists & Skip Trace',
-    body: 'Build hyper-targeted lead lists and pull owner phone numbers and emails in seconds, enriched automatically.',
-  },
-  {
-    icon: CpuIcon,
-    title: 'AI Comps & Underwriting',
-    body: 'Instant comparable sales and deal math, so you know your max offer before you ever pick up the phone.',
+    title: 'Find Better Opportunities',
+    body: 'AI surfaces the motivated, off-market owners most likely to sell — so you stop guessing which list to pull.',
   },
   {
     icon: PhoneIcon,
-    title: 'AI Outreach & Dialer',
-    body: 'Reach owners at scale with the AI-assisted dialer and follow-up sequences that keep every lead warm.',
+    title: 'Respond to Leads Faster',
+    body: 'Reply to every lead in seconds with AI-assisted outreach, so no opportunity goes cold while you’re busy.',
   },
   {
-    icon: BoltIcon,
-    title: 'AI Assistant On Call',
-    body: 'Your always-on real-estate assistant answers questions, drafts offers, and tells you the next best move.',
+    icon: CpuIcon,
+    title: 'Know Exactly What to Say',
+    body: 'AI drafts your scripts, objection handling, and offers — so you always know the next word on every call and text.',
   },
   {
     icon: TerminalIcon,
-    title: 'Automations That Run 24/7',
-    body: 'Set it once and the system tracks, tags, and nurtures your pipeline while you sleep. You just close.',
+    title: 'Automate Your Follow-Up',
+    body: 'Set it once and AI runs your follow-up on autopilot, nurturing every lead until they’re ready to deal.',
+  },
+  {
+    icon: DatabaseIcon,
+    title: 'Organize Your Entire Business',
+    body: 'Your whole pipeline — leads, tasks, conversations — tracked and organized automatically in one place.',
+  },
+  {
+    icon: BoltIcon,
+    title: 'Move Your First Deal to Closing',
+    body: 'From first contact to signed contract, the system guides your first deal toward the closing table.',
   },
 ]
 
@@ -48,9 +48,9 @@ export default function AISystems() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#030705] via-transparent to-[#030705]" />
       <div className="relative z-10 mx-auto max-w-6xl px-5 lg:px-8">
         <MatrixHeading
-          eyebrow="Unlock the Intelligent Strategy System"
-          title={<>DealMachine, now with a <span className="text-matrix text-glow-green">full AI stack</span></>}
-          intro="The newest DealMachine update turns finding, analyzing, and closing deals into one AI-powered workflow — and you'll run all of it inside the challenge."
+          eyebrow="The New AI-Powered System"
+          title={<>Use AI as an <span className="text-matrix text-glow-green">actual employee</span> in your business</>}
+          intro="DealMachine's newest AI features handle the work that used to take a whole team. You'll see exactly how the system works — and how to put it to work for you."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

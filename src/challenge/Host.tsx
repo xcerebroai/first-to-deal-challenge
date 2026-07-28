@@ -59,7 +59,7 @@ export default function Host() {
               <h3 className="mt-2 font-heading text-2xl font-extrabold text-white">{HOST_NAME}</h3>
               <p className="font-mono text-sm text-matrix/70">{HOST_HANDLE}</p>
               <p className="mt-4 font-body text-sm leading-relaxed text-slate-300/85">
-                I'll be live with you all three days, walking through the exact system I use to find
+                I'll be live with you both days, walking through the exact system I use to find
                 and close off-market deals — now supercharged with DealMachine's AI. No theory, no
                 gurus, just the steps that get contracts signed. Show up, plug in, and let's get you
                 your first deal.

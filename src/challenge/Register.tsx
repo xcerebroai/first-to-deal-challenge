@@ -229,8 +229,8 @@ export default function Register() {
         </motion.h2>
 
         <p className="mx-auto mt-5 max-w-xl font-body text-base leading-relaxed text-slate-300/85">
-          The question is… will you stay plugged into their system — or will you break free? Drop
-          your details and I'll see you live.
+          The tools are here. The system is ready. Now it's time to execute. Drop your details and
+          I'll see you live on Aug 5.
         </p>
 
         <div className="mt-10">
