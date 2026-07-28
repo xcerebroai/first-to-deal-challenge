@@ -34,19 +34,22 @@ export default function Hero() {
     >
       {/* Scan-effect image backdrop (renders only if a hero image is set) */}
       <HeroBackdrop />
-      {/* Rain sits above the image, so keep it subtle when there's a photo. */}
-      <CodeRain opacity={HAS_HERO_IMAGE ? 0.25 : 0.7} />
+      {/* No image → animated binary rain fills the hero. With an image, the
+          photo + moving ASCII layer carry the motion instead. */}
+      {!HAS_HERO_IMAGE && <CodeRain opacity={0.7} />}
       <div className="scanlines pointer-events-none absolute inset-0 opacity-30" />
       <Grain className="opacity-[0.08] mix-blend-overlay" />
-      {/* Keep text legible without washing out the rain: darken a soft center
-          band + fade only the very bottom into the next section. */}
+      {/* Darken the left (text) side; let the character breathe on the right.
+          A flat scrim on mobile keeps centered text legible. */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(60% 50% at 50% 50%, rgba(3,7,5,0.7), transparent 75%)' }}
+        style={{ background: 'linear-gradient(90deg, rgba(3,7,5,0.94) 0%, rgba(3,7,5,0.78) 30%, rgba(3,7,5,0.38) 55%, transparent 80%)' }}
       />
+      <div className="pointer-events-none absolute inset-0 bg-[#030705]/45 lg:hidden" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#030705]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl px-5 text-center lg:px-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl px-5 lg:px-10">
+       <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-2xl lg:text-left">
         <motion.span
           custom={0}
           variants={fadeUp}
@@ -85,7 +88,7 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mx-auto mt-8 max-w-2xl space-y-1.5 border-y border-matrix/15 py-5 text-left font-mono text-[0.82rem] leading-relaxed text-matrix/85 sm:text-sm"
+          className="mx-auto mt-8 max-w-2xl space-y-1.5 border-y border-matrix/15 py-5 text-left font-mono text-[0.82rem] leading-relaxed text-matrix/85 sm:text-sm lg:mx-0"
         >
           {MANIFESTO.map((line) => (
             <p key={line}>
@@ -99,7 +102,7 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mx-auto mt-7 max-w-2xl font-body text-base leading-relaxed text-slate-300/90 sm:text-lg"
+          className="mx-auto mt-7 max-w-2xl font-body text-base leading-relaxed text-slate-300/90 sm:text-lg lg:mx-0"
         >
           This time it's not another wholesaling blueprint. I'm unveiling the new AI-powered
           system that finds opportunities, responds to leads, and moves your first deal toward
@@ -111,7 +114,7 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:items-start lg:justify-start"
         >
           <a
             href="#register"
@@ -133,7 +136,7 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mx-auto mt-11 grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2"
+          className="mx-auto mt-11 grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2 lg:mx-0"
         >
           {DAYS.map((d) => (
             <div
@@ -147,6 +150,7 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
+       </div>
       </div>
 
       {/* Scroll-to-explore indicator */}

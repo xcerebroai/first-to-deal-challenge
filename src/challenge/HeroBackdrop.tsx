@@ -10,6 +10,7 @@
  */
 import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring } from 'motion/react'
+import AsciiArt from './AsciiArt'
 import { HERO_IMAGE } from './config'
 
 // A local image dropped at src/assets/challenge-hero.(png|jpg|jpeg|webp) takes
@@ -54,22 +55,33 @@ export default function HeroBackdrop() {
           these images are already Matrix-green, so we preserve them. */}
       {showImage && (
         <>
-          <motion.img
-            src={HERO_SRC}
-            alt=""
-            aria-hidden
-            onLoad={() => setReady(true)}
-            onError={() => setFailed(true)}
-            style={{ x, y }}
-            className={`absolute inset-0 h-full w-full scale-110 object-cover transition-opacity duration-1000 ${
-              ready ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+          {/* Wrapper carries the pointer parallax; the <img> carries the slow
+              Ken Burns "drift" — kept on separate elements so their transforms
+              don't collide. */}
+          <motion.div style={{ x, y }} className="absolute inset-0">
+            <img
+              src={HERO_SRC}
+              alt=""
+              aria-hidden
+              onLoad={() => setReady(true)}
+              onError={() => setFailed(true)}
+              style={{ objectPosition: '72% 50%' }}
+              className={`hero-drift h-full w-full object-cover transition-opacity duration-1000 ${
+                ready ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          </motion.div>
           {/* gentle green unify + slight darken for text legibility */}
           <div className="absolute inset-0 bg-matrix/12 mix-blend-color" />
           <div className="absolute inset-0 bg-black/25" />
         </>
       )}
+
+      {/* Moving ASCII "code" layer — screen-blended so its green glyphs drift
+          over the scene while the dark background drops out. */}
+      <div className="absolute inset-0 opacity-45" style={{ mixBlendMode: 'screen' }}>
+        <AsciiArt className="h-full w-full" />
+      </div>
 
       {/* Soft red bloom band trailing the line (behind it) */}
       <div
