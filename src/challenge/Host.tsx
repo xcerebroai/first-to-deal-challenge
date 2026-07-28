@@ -5,7 +5,15 @@
  */
 import { Reveal, ImageWithFallback } from '../components/ui'
 import { MatrixHeading } from './section'
-import { HOST_NAME, HOST_HANDLE } from './config'
+import { HOST_NAME, HOST_HANDLE, HOST_VIDEO } from './config'
+
+/** Accepts a YouTube video ID or any watch/share/embed URL and returns the ID. */
+function youTubeId(input: string): string {
+  if (!input) return ''
+  const m = input.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/)
+  return m ? m[1] : input
+}
+const videoId = youTubeId(HOST_VIDEO)
 
 // Drop your Matrix host image at src/assets/challenge-host.(png|jpg|jpeg|webp)
 // and it's auto-detected and inlined into the build. No file present → the
@@ -57,16 +65,34 @@ export default function Host() {
                 {'> '}HOST
               </span>
               <h3 className="mt-2 font-heading text-2xl font-extrabold text-white">{HOST_NAME}</h3>
-              <p className="font-mono text-sm text-matrix/70">{HOST_HANDLE}</p>
+              {HOST_HANDLE && <p className="font-mono text-sm text-matrix/70">{HOST_HANDLE}</p>}
               <p className="mt-4 font-body text-sm leading-relaxed text-slate-300/85">
-                I'll be live with you both days, walking through the exact system I use to find
-                and close off-market deals — now supercharged with DealMachine's AI. No theory, no
-                gurus, just the steps that get contracts signed. Show up, plug in, and let's get you
-                your first deal.
+                {HOST_NAME} has been wholesaling real estate for more than 12 years — and closed his
+                very first deal using DealMachine. He'll be live with you both days, walking through
+                the exact AI-powered system he uses to find and close off-market deals. No theory,
+                no gurus — just the steps that get contracts signed.
               </p>
             </div>
           </div>
         </Reveal>
+
+        {videoId && (
+          <Reveal delay={0.15} className="mx-auto mt-6 max-w-3xl">
+            <div className="matrix-card overflow-hidden rounded-xl p-2 sm:p-3">
+              <div className="relative aspect-video overflow-hidden rounded-lg">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                  title={`${HOST_NAME} — First to Deal`}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   )

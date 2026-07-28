@@ -15,7 +15,7 @@ export const REGISTER_URL = 'https://your-registration-link.com'
 /**
  * On-page registration form → GoHighLevel inbound webhook. When set, the form
  * in the Register section POSTs each signup here with these fields: firstName,
- * email, phone, source, submittedAt.
+ * lastName, email, phone, source, submittedAt.
  *
  * GHL setup: Automation → Workflows → new workflow → trigger "Inbound Webhook"
  * → copy the webhook URL → paste it below. In the workflow, reference the
@@ -31,8 +31,11 @@ export const REGISTER_URL = 'https://your-registration-link.com'
 export const WEBHOOK_URL = 'https://your-webhook-url.com'
 
 /** Who's running it (shown in the Host section + footer). */
-export const HOST_NAME = 'Your Name'
-export const HOST_HANDLE = '@yourhandle'
+export const HOST_NAME = 'Q Flores'
+export const HOST_HANDLE = '' // optional @handle; leave '' to hide
+
+/** YouTube video shown in the Host bio. Paste the video ID or full URL; '' hides it. */
+export const HOST_VIDEO = 'FhgyAGu-Gaw'
 
 /** Brand shown in the nav + footer. */
 export const BRAND = 'FIRST TO DEAL'

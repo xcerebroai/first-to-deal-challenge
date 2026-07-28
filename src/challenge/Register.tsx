@@ -61,6 +61,7 @@ function RegistrationForm() {
 
     const payload = {
       firstName: String(fd.get('firstName') || '').trim(),
+      lastName: String(fd.get('lastName') || '').trim(),
       email: String(fd.get('email') || '').trim(),
       phone: String(fd.get('phone') || '').trim(),
       source: 'First to Deal Challenge — DealMachine AI Edition',
@@ -107,7 +108,7 @@ function RegistrationForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="matrix-card mx-auto max-w-md rounded-xl p-6 text-left sm:p-7">
+    <form onSubmit={onSubmit} className="matrix-card mx-auto max-w-lg rounded-xl p-6 text-left sm:p-7">
       {/* Honeypot — visually hidden, off-screen, not tab-focusable. */}
       <div aria-hidden className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
         <label>
@@ -117,19 +118,35 @@ function RegistrationForm() {
       </div>
 
       <div className="space-y-4">
-        <div>
-          <label htmlFor="firstName" className="mb-1.5 block font-mono text-xs uppercase tracking-[0.14em] text-matrix/70">
-            {'> '}First Name
-          </label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            autoComplete="given-name"
-            placeholder="Neo"
-            className="w-full rounded-sm border border-matrix/25 bg-black/40 px-4 py-3 font-body text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-matrix focus:shadow-[0_0_16px_-2px_rgba(34,224,107,0.4)]"
-          />
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="firstName" className="mb-1.5 block font-mono text-xs uppercase tracking-[0.14em] text-matrix/70">
+              {'> '}First Name
+            </label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              autoComplete="given-name"
+              placeholder="Neo"
+              className="w-full rounded-sm border border-matrix/25 bg-black/40 px-4 py-3 font-body text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-matrix focus:shadow-[0_0_16px_-2px_rgba(34,224,107,0.4)]"
+            />
+          </div>
+          <div>
+            <label htmlFor="lastName" className="mb-1.5 block font-mono text-xs uppercase tracking-[0.14em] text-matrix/70">
+              {'> '}Last Name
+            </label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              autoComplete="family-name"
+              placeholder="Anderson"
+              className="w-full rounded-sm border border-matrix/25 bg-black/40 px-4 py-3 font-body text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-matrix focus:shadow-[0_0_16px_-2px_rgba(34,224,107,0.4)]"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="email" className="mb-1.5 block font-mono text-xs uppercase tracking-[0.14em] text-matrix/70">
@@ -153,6 +170,7 @@ function RegistrationForm() {
             id="phone"
             name="phone"
             type="tel"
+            required
             autoComplete="tel"
             placeholder="(555) 555-5555"
             className="w-full rounded-sm border border-matrix/25 bg-black/40 px-4 py-3 font-body text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-matrix focus:shadow-[0_0_16px_-2px_rgba(34,224,107,0.4)]"
