@@ -28,7 +28,6 @@ const HERO_SRC = Object.values(heroAssets)[0] || HERO_IMAGE
 export const HAS_HERO_IMAGE = Boolean(HERO_SRC)
 
 export default function HeroBackdrop() {
-  const [ready, setReady] = useState(false)
   const [failed, setFailed] = useState(false)
 
   // Pointer parallax — springy translate on the image layer.
@@ -63,12 +62,9 @@ export default function HeroBackdrop() {
               src={HERO_SRC}
               alt=""
               aria-hidden
-              onLoad={() => setReady(true)}
               onError={() => setFailed(true)}
               style={{ objectPosition: '72% 50%' }}
-              className={`hero-drift h-full w-full object-cover transition-opacity duration-1000 ${
-                ready ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="hero-drift h-full w-full object-cover"
             />
           </motion.div>
           {/* gentle green unify + slight darken for text legibility */}
@@ -79,7 +75,7 @@ export default function HeroBackdrop() {
 
       {/* Moving ASCII "code" layer — screen-blended so its green glyphs drift
           over the scene while the dark background drops out. */}
-      <div className="absolute inset-0 opacity-45" style={{ mixBlendMode: 'screen' }}>
+      <div className="absolute inset-0 opacity-30" style={{ mixBlendMode: 'screen' }}>
         <AsciiArt className="h-full w-full" />
       </div>
 
