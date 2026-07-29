@@ -58,7 +58,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-matrix/40 bg-matrix/10 px-4 py-1.5 font-mono text-[0.7rem] font-bold uppercase tracking-[0.18em] text-matrix-bright backdrop-blur-sm"
         >
           <CalendarIcon className="h-4 w-4" />
-          2-Day Live Challenge · New DealMachine AI Features
+          2-Day Live Challenge · New Jarvis AI Features
         </motion.span>
 
         <motion.p

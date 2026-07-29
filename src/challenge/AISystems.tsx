@@ -50,7 +50,7 @@ export default function AISystems() {
         <MatrixHeading
           eyebrow="The New AI-Powered System"
           title={<>Use AI as an <span className="text-matrix text-glow-green">actual employee</span> in your business</>}
-          intro="DealMachine's newest AI features handle the work that used to take a whole team. You'll see exactly how the system works — and how to put it to work for you."
+          intro="Jarvis's newest AI features handle the work that used to take a whole team. You'll see exactly how the system works — and how to put it to work for you."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

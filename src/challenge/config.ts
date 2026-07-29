@@ -51,12 +51,12 @@ export const HERO_IMAGE = ''
 
 /** The live days. Edit the labels freely — they're displayed verbatim. */
 export const DAYS = [
-  { n: 1, label: 'Day 1', when: 'Wednesday, Aug 5 · 12 PM CST' },
-  { n: 2, label: 'Day 2', when: 'Thursday, Aug 6 · 12 PM CST' },
+  { n: 1, label: 'Day 1', when: 'Wednesday, Aug 5 · 7 PM CST' },
+  { n: 2, label: 'Day 2', when: 'Thursday, Aug 6 · 7 PM CST' },
 ]
 
 /**
  * Countdown deadline ("REGISTRATION CLOSES IN"). Local time of the viewer.
  * Format: 'YYYY-MM-DDTHH:MM:SS'. Set this to just before your Day 1 start.
  */
-export const REGISTRATION_CLOSES = '2026-08-05T12:00:00'
+export const REGISTRATION_CLOSES = '2026-08-05T19:00:00'

@@ -11,8 +11,8 @@ import { DAYS } from './config'
 const ROADMAP = [
   {
     ...DAYS[0],
-    title: 'Find & Respond',
-    body: 'Turn on the new AI, point it at your market, and watch it surface better opportunities, skip-trace owners, and help you respond to leads faster than ever.',
+    title: 'Set Up & Find',
+    body: 'Set up your deal system, turn on the AI, and use it to surface better opportunities and work your leads — then take on your first action challenge.',
   },
   {
     ...DAYS[1],
@@ -29,8 +29,8 @@ const PILLARS = [
   },
   {
     icon: CpuIcon,
-    title: 'The New AI Features',
-    body: "See DealMachine's brand-new AI features first-hand — how the system works and how to put it to work inside your real estate business.",
+    title: 'New Jarvis Features & Tools',
+    body: "See Jarvis's brand-new AI features and tools first-hand — how the system works, and how to use AI to work your leads.",
   },
   {
     icon: TerminalIcon,

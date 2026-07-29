@@ -248,7 +248,7 @@ export default function Register() {
 
         <p className="mx-auto mt-5 max-w-xl font-body text-base leading-relaxed text-slate-300/85">
           The tools are here. The system is ready. Now it's time to execute. Drop your details and
-          I'll see you live on Aug 5.
+          I'll see you live Aug 5 at 7 PM CST.
         </p>
 
         <div className="mt-10">

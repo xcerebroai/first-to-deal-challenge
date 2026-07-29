@@ -1,33 +1,32 @@
 /**
- * "The Matrix Rewards" — the three cheat codes every participant unlocks:
- * 1-year Skool community access, 10,000 skip-traced leads, and a free year of
- * DealMachine (AI Edition). Mirrors the reference's rewards stack.
+ * Prize stack — complete the challenge for a chance to win a 1-year Jarvis
+ * subscription, Lifetime REI Cheat Codes, and Lifetime AI Cheat Codes.
  */
 import { Reveal } from '../components/ui'
 import { MatrixHeading } from './section'
-import { CheckIcon, UsersIcon, DatabaseIcon, CpuIcon } from './icons'
+import { CheckIcon, CpuIcon, TerminalIcon, BoltIcon } from './icons'
 
 const REWARDS = [
   {
-    icon: UsersIcon,
-    tag: 'Cheat Code 01',
-    title: '1-Year Premium Community Access',
-    body: 'Step inside my private Skool community and unlock the vault: weekly calls, AI automations, cash-buyer databases, and everything that closes deals.',
-    value: '$1,164 value',
-  },
-  {
-    icon: DatabaseIcon,
-    tag: 'Cheat Code 02',
-    title: '10,000 Skip-Traced Leads',
-    body: "Tap into a database of real sellers with owner contact info already attached. These aren't just any leads — these are the kind that move.",
-    value: '$497 value',
-  },
-  {
     icon: CpuIcon,
-    tag: 'Cheat Code 03',
-    title: '1 Year of DealMachine — AI Edition, Free',
-    body: 'The ultimate tool to find, track, and market properties off-market — now with the full AI stack. Paired with my guidance, it becomes a weapon.',
-    value: '$1,164 value',
+    tag: 'Prize 01',
+    title: '1-Year Jarvis Subscription',
+    body: 'A full year inside Jarvis — the AI system that finds leads, automates your follow-up, and moves deals toward the closing table faster.',
+    value: '1-Year Access',
+  },
+  {
+    icon: TerminalIcon,
+    tag: 'Prize 02',
+    title: 'Lifetime REI Cheat Codes',
+    body: 'Lifetime access to the real-estate-investing playbooks, scripts, and shortcuts that get contracts signed.',
+    value: 'Lifetime',
+  },
+  {
+    icon: BoltIcon,
+    tag: 'Prize 03',
+    title: 'Lifetime AI Cheat Codes',
+    body: 'Lifetime access to the AI prompts, automations, and workflows that put your business on autopilot.',
+    value: 'Lifetime',
   },
 ]
 
@@ -37,9 +36,9 @@ export default function Rewards() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-matrix/30 to-transparent" />
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <MatrixHeading
-          eyebrow="The Matrix Rewards"
-          title={<>Unlock your <span className="text-matrix text-glow-green">cheat codes</span></>}
-          intro="Show up and do the work — you walk away with the exact tools and access I use to close, stacked in your favor."
+          eyebrow="Complete The Challenge To Win"
+          title={<>Cheat codes <span className="text-matrix text-glow-green">up for grabs</span></>}
+          intro="Show up, run the daily action challenge, and you're in the running to win the exact tools that run a real estate business on AI."
         />
 
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -67,9 +66,8 @@ export default function Rewards() {
 
         <Reveal delay={0.1} className="mt-10">
           <p className="text-center font-mono text-sm text-matrix/70">
-            {'> '}Total stack value:{' '}
-            <span className="font-bold text-matrix-bright text-glow-green">$2,825+</span>
-            {' '}— yours free when you show up and execute.
+            {'> '}Complete both days + your action challenge for your shot at{' '}
+            <span className="font-bold text-matrix-bright text-glow-green">the full stack</span>.
           </p>
         </Reveal>
       </div>
