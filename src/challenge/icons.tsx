@@ -48,6 +48,15 @@ export function BoltIcon(props: SVGProps<SVGSVGElement>) {
   )
 }
 
+export function LockIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base(props)}>
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+    </svg>
+  )
+}
+
 export function TerminalIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>

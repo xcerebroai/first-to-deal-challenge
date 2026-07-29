@@ -7,7 +7,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { motion } from 'motion/react'
 import { Grain } from '../components/ui'
 import CodeRain from './CodeRain'
-import { ArrowRightIcon, CheckIcon, MapPinIcon, VideoIcon } from './icons'
+import { ArrowRightIcon, CheckIcon, LockIcon, MapPinIcon, VideoIcon } from './icons'
 import { WEBHOOK_URL } from './config'
 import { REGISTRATION_CLOSES } from './config'
 
@@ -48,7 +48,7 @@ function Unit({ value, label }: { value: number; label: string }) {
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-function RegistrationForm() {
+function RegistrationForm({ onSuccess }: { onSuccess?: () => void }) {
   const [status, setStatus] = useState<Status>('idle')
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -85,6 +85,7 @@ function RegistrationForm() {
         console.warn('[Register] WEBHOOK_URL not configured — payload:', payload)
       }
       setStatus('success')
+      onSuccess?.()
       form.reset()
     } catch {
       setStatus('error')
@@ -206,7 +207,13 @@ function RegistrationForm() {
   )
 }
 
-export default function Register() {
+export default function Register({
+  unlocked,
+  onUnlock,
+}: {
+  unlocked: boolean
+  onUnlock: () => void
+}) {
   const { days, hours, minutes, seconds, done } = useCountdown(REGISTRATION_CLOSES)
 
   return (
@@ -241,18 +248,46 @@ export default function Register() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mt-12 font-heading text-3xl font-extrabold leading-tight text-white sm:text-5xl"
         >
-          Ready to lock in your
-          <br />
-          <span className="text-matrix text-glow-green">first real estate deal?</span>
+          {unlocked ? (
+            <>
+              You're in.
+              <br />
+              <span className="text-matrix text-glow-green">See you live Aug 5 @ 7 PM CST.</span>
+            </>
+          ) : (
+            <>
+              Sign in to{' '}
+              <span className="text-matrix text-glow-green">unlock the full challenge.</span>
+            </>
+          )}
         </motion.h2>
 
         <p className="mx-auto mt-5 max-w-xl font-body text-base leading-relaxed text-slate-300/85">
-          The tools are here. The system is ready. Now it's time to execute. Drop your details and
-          I'll see you live Aug 5 at 7 PM CST.
+          {unlocked
+            ? "Your seat is locked and the challenge is unlocked below. Check your email — your Zoom link is on the way."
+            : 'Drop your name, email & phone to unlock the schedule, the new DealMachine AI features, the prizes, and your host — and lock your seat.'}
         </p>
 
         <div className="mt-10">
-          <RegistrationForm />
+          {unlocked ? (
+            <div className="matrix-card mx-auto flex max-w-lg flex-col items-center rounded-xl px-7 py-9 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-matrix/40 bg-matrix/10 text-matrix-bright">
+                <CheckIcon className="h-7 w-7" />
+              </div>
+              <h3 className="mt-5 font-heading text-2xl font-extrabold text-white">Challenge unlocked.</h3>
+              <p className="mt-3 font-body text-sm leading-relaxed text-slate-300/85">
+                You're registered — scroll down for the full breakdown.
+              </p>
+              <p className="matrix-caret mt-6 font-mono text-xs text-matrix/70">{'> '}access granted</p>
+            </div>
+          ) : (
+            <>
+              <p className="mb-4 flex items-center justify-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.14em] text-matrix-bright">
+                <LockIcon className="h-4 w-4" /> Unlocks the full page below
+              </p>
+              <RegistrationForm onSuccess={onUnlock} />
+            </>
+          )}
         </div>
 
         {/* Location */}
