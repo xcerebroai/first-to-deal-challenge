@@ -5,6 +5,7 @@
  */
 import { Reveal, ImageWithFallback } from '../components/ui'
 import { MatrixHeading } from './section'
+import MatrixShader from './MatrixShader'
 import { HOST_NAME, HOST_HANDLE, HOST_VIDEO } from './config'
 
 /** Accepts a YouTube video ID or any watch/share/embed URL and returns the ID. */
@@ -35,8 +36,12 @@ const initials = HOST_NAME.split(' ')
 export default function Host() {
   return (
     <section id="host" className="bg-matrix-deep relative overflow-hidden py-20 sm:py-28">
+      {/* WebGL "digital rain" shader behind the host content */}
+      <MatrixShader />
+      {/* Soft scrim so the heading + card stay legible over the rain */}
+      <div className="pointer-events-none absolute inset-0 bg-[#010402]/45" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-matrix/30 to-transparent" />
-      <div className="relative mx-auto max-w-5xl px-5 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-5xl px-5 lg:px-8">
         <MatrixHeading eyebrow="Your Host" title="Learn from someone who actually closes" />
 
         <Reveal delay={0.1} className="mt-12">
