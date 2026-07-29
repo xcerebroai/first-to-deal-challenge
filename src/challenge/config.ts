@@ -28,7 +28,8 @@ export const REGISTER_URL = 'https://your-registration-link.com'
  * so the form optimistically shows success once the request fires. Always send
  * one live test and confirm the contact lands before you go public.
  */
-export const WEBHOOK_URL = 'https://your-webhook-url.com'
+export const WEBHOOK_URL =
+  'https://services.leadconnectorhq.com/hooks/zsODNuiVWJqICpsgxCNF/webhook-trigger/e602dfce-d4b4-4f0e-8411-353f7a816f03'
 
 /** Who's running it (shown in the Host section + footer). */
 export const HOST_NAME = 'Q Flores'
