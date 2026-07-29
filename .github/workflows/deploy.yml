@@ -28,6 +28,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # Custom domain — keeps awmastermind.com bound on every Actions deploy
+      # (GitHub can otherwise drop the custom domain when publishing via Actions).
+      - name: Add CNAME (custom domain)
+        run: echo 'awmastermind.com' > dist/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
