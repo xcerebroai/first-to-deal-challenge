@@ -29,8 +29,8 @@ const PILLARS = [
   },
   {
     icon: CpuIcon,
-    title: 'New Jarvis Features & Tools',
-    body: "See Jarvis's brand-new AI features and tools first-hand — how the system works, and how to use AI to work your leads.",
+    title: 'New DealMachine Features & Tools',
+    body: "See DealMachine's brand-new AI features and tools first-hand — how the system works, and how to use AI to work your leads.",
   },
   {
     icon: TerminalIcon,

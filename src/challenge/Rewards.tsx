@@ -1,5 +1,5 @@
 /**
- * Prize stack — complete the challenge for a chance to win a 1-year Jarvis
+ * Prize stack — complete the challenge for a chance to win a 1-year DealMachine
  * subscription, Lifetime REI Cheat Codes, and Lifetime AI Cheat Codes.
  */
 import { Reveal } from '../components/ui'
@@ -10,8 +10,8 @@ const REWARDS = [
   {
     icon: CpuIcon,
     tag: 'Prize 01',
-    title: '1-Year Jarvis Subscription',
-    body: 'A full year inside Jarvis — the AI system that finds leads, automates your follow-up, and moves deals toward the closing table faster.',
+    title: '1-Year DealMachine Subscription',
+    body: 'A full year inside DealMachine — the AI system that finds leads, automates your follow-up, and moves deals toward the closing table faster.',
     value: '1-Year Access',
   },
   {
