@@ -40,6 +40,9 @@ export const HOST_VIDEO = 'FhgyAGu-Gaw'
 /** Brand shown in the nav + footer. */
 export const BRAND = 'FIRST TO DEAL'
 
+/** Company / legal name shown at the end of the site (footer copyright). */
+export const COMPANY = 'AW Mastermind'
+
 /**
  * Hero background image (the "scan effect" backdrop). Easiest: drop a file at
  * src/assets/challenge-hero.(png|jpg|jpeg|webp) — it's auto-detected and inlined
